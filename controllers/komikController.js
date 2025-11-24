@@ -11,7 +11,6 @@ async function createKomik(req, res) {
             komikData.imageName = req.file.originalname;
             komikData.imageData = req.file.buffer;
         }
-
         const result = await komikService.createKomik(db, komikData);
         res.status(201).json({ success: true, data: result });
     } catch (error) {
